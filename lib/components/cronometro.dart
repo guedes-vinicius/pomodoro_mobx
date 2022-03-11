@@ -22,7 +22,7 @@ class Cronometro extends StatelessWidget {
             height: 20,
           ),
           Text(
-            '25:00',
+            '${store.minutos.toString().padLeft(2, '0')}:${store.segundos.toString().padLeft(2, '0')}',
             style: TextStyle(color: Colors.white, fontSize: 120),
           ),
           SizedBox(

@@ -5,6 +5,8 @@ class PomodoroStore = _PomodoroStore with _$PomodoroStore;
 
 abstract class _PomodoroStore with Store {
   @observable
+  bool validador = false;
+  @observable
   int tempoTrabalho = 2;
 
   @observable
@@ -15,6 +17,11 @@ abstract class _PomodoroStore with Store {
 
   @observable
   int segundos = 0;
+
+  @action
+  void iniciar() {
+    validador = !validador;
+  }
 
   @action
   void aumentarTrabalho() {
