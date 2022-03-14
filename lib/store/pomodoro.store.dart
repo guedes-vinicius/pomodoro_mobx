@@ -20,7 +20,12 @@ abstract class _PomodoroStore with Store {
 
   @action
   void iniciar() {
-    validador = !validador;
+    validador = true;
+  }
+
+  @action
+  void parar() {
+    validador = false;
   }
 
   @action
