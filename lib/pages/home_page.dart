@@ -25,14 +25,22 @@ class HomePage extends StatelessWidget {
                     EntradaTempo(
                       titulo: 'Trabalhar',
                       valor: store.tempoTrabalho,
-                      dec: store.diminuirTrabalho,
-                      inc: store.aumentarTrabalho,
+                      dec: store.validador && store.estaTrabalhando()
+                          ? null
+                          : store.diminuirTrabalho,
+                      inc: store.validador && store.estaTrabalhando()
+                          ? null
+                          : store.aumentarTrabalho,
                     ),
                     EntradaTempo(
                       titulo: 'Descanso',
                       valor: store.tempoDescanso,
-                      dec: store.diminuirDescanso,
-                      inc: store.aumentarDescanso,
+                      dec: store.validador && store.estaTrabalhando()
+                          ? null
+                          : store.diminuirDescanso,
+                      inc: store.validador && store.estaDescansando()
+                          ? null
+                          : store.aumentarDescanso,
                     )
                   ],
                 ),
